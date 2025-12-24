@@ -2,382 +2,923 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pankaj Steel Fabrication & Welding Services</title>
+  <title>Pankaj Steel Fabrication & Welding Services | Indirapuram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Custom steel and iron fabrication for gates, grills, railings, sheds, stairs, windows, jhulas, rolling shutters, aluminium work and more in Indirapuram, Ghaziabad." />
+  <meta name="robots" content="index, follow" />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Pankaj Steel Fabrication & Welding Services - Expert steel fabrication, welding, gates, grills, and custom metalwork in Ghaziabad." />
-  <meta name="keywords" content="Steel Fabrication, Welding Services, Ghaziabad, Gates, Grills, Railings, Metalwork" />
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Fonts (preload for performance, replaces @import) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- Icons (Font Awesome) – load non-blocking -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
-</head>
 
+</head>
 <body>
-  <!-- Header -->
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
   <header id="header">
-    <div class="logo-container">
-      <video class="logo" autoplay loop muted aria-label="Company logo animation" style="position: absolute; top: 10px; left: 10px; width: 200px; height: auto;">           
-        <source src="img/logo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <nav>
-      <ul id="navbar">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li>
-          <input type="text" placeholder="Search..." id="search-box" />
-          <i class="fa fa-search"></i>
-        </li>
-        <li>
-          <a href="contact.html" aria-label="Contact us">
-            <i class="fa fa-phone fa-lg"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+  <!-- Logo -->
+  <a href="/" class="logo-wrapper">
+  <video class="logo" autoplay loop muted playsinline 
+         width="200" height="120">
+    <source src="img/logo.mp4" type="video/mp4">
+  </video>
+  </a>
+
+  <!-- Navbar -->
+  <ul id="navbar">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="#product1">Products</a></li>
+    <li><a href="#services">Services</a></li>
+
+    <!-- Call button inside navbar (correct place) -->
+    <li>
+      <a href="tel:+919810776115" class="call-link">
+        <i class="fa-solid fa-phone"></i> Call for Free Quote
+      </a>
+    </li>
+  </ul>
+
   </header>
 
-  <!-- Call Now Strip -->
-<div class="call-strip">
-  <p>📞 Call Now – Get Free Quote: 
-    <strong><a href="tel:+919810776115">+91 9810776115</a></strong>
+  <!-- Call strip -->
+  <div class="call-strip" aria-label="Quick call for quote">
+    <p>
+      Need gates, grills, railings or shed work in Indirapuram?
+      <a href="tel:+919810776115">Call now for on-site measurement & free quote</a>
+    </p>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section with Slider -->
+<section id="hero" aria-labelledby="hero-heading">
+  <!-- Hero images – WebP + srcset for each slide -->
+  <img
+    src="img/hero/hero-1600.webp"
+    srcset="
+      img/hero/hero-600.webp 600w,
+      img/hero/hero-900.webp 900w,
+      img/hero/hero-1200.webp 1200w,
+      img/hero/hero-1600.webp 1600w
+    "
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 100vw,
+           1600px"
+    alt="Custom steel gates and grills at a residence"
+    class="hero-slide active"
+    width="1600"
+    height="500"
+    loading="eager"
+  />
+
+  <img
+    src="img/hero/hero 2-1600.webp"
+    srcset="
+      img/hero/hero 2-600.webp 600w,
+      img/hero/hero 2-900.webp 900w,
+      img/hero/hero 2-1200.webp 1200w,
+      img/hero/hero 2-1600.webp 1600w
+    "
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 100vw,
+           1600px"
+    alt="Steel fabrication workshop banner with welding work"
+    class="hero-slide"
+    width="1600"
+    height="500"
+    loading="lazy"
+  />
+
+  <img
+    src="img/hero/hero 3-1600.webp"
+    srcset="
+      img/hero/hero 3-600.webp 600w,
+      img/hero/hero 3-900.webp 900w,
+      img/hero/hero 3-1200.webp 1200w,
+      img/hero/hero 3-1600.webp 1600w
+    "
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 100vw,
+           1600px"
+    alt="Expert welding services for steel structures"
+    class="hero-slide"
+    width="1600"
+    height="500"
+    loading="lazy"
+  />
+
+  <img
+    src="img/hero/hero 4-1600.webp"
+    srcset="
+      img/hero/hero 4-600.webp 600w,
+      img/hero/hero 4-900.webp 900w,
+      img/hero/hero 4-1200.webp 1200w,
+      img/hero/hero 4-1600.webp 1600w
+    "
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 100vw,
+           1600px"
+    alt="Modern steel structures and railings"
+    class="hero-slide"
+    width="1600"
+    height="500"
+    loading="lazy"
+  />
+
+  <!-- CTA button -->
+  <button id="shopBtn" type="button" aria-label="Explore services"
+    onclick="document.getElementById('product1').scrollIntoView({behavior: 'smooth'});">
+    Explore Services
+  </button>
+
+  <!-- Optional slider controls -->
+  <div class="slider-dots"></div>
+</section>
+
+    <!-- Feature Section -->
+<section id="feature" class="section-p1" aria-labelledby="feature-heading">
+  <h2 id="feature-heading">Why customers choose Pankaj Steel Fabrication</h2>
+  <p class="section-intro">
+    Strong, long-lasting steel and iron work with on-site measurement, fair pricing, and clean finishing – trusted in Indirapuram and nearby areas.
   </p>
-</div>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <img src="img/Hero.png" class="hero-slide active" alt="Custom steel gates and grills" loading="lazy" />
-    <img src="img/Hero 2.png" class="hero-slide" alt="Steel fabrication workshop banner" loading="lazy" />
-    <img src="img/Hero 3.png" class="hero-slide" alt="Expert welding services" loading="lazy" />
-    <img src="img/Hero 4.png" class="hero-slide" alt="Modern steel structures" loading="lazy" />
-    <button id="shopBtn">Explore Services</button>
-  </section>
+  <!-- NEW WRAPPER -->
+  <div class="feature-row">
 
-  <!-- Feature Section -->
-  <section id="feature" class="section-p1">
-    <div class="fe-box"><img src="img/Features/Free Quote on Call.png" alt="Free Quote on Call" /><h6>Free Quote on Call</h6></div>
-    <div class="fe-box"><img src="img/Features/On‑Site Measurement by Experts.png" alt="On‑Site Measurement" /><h6>On‑Site Measurement by Experts</h6></div>
-    <div class="fe-box"><img src="img/Features/Promotions.png" alt="Promotions" /><h6>Promotions</h6></div>
-    <div class="fe-box"><img src="img/Features/Save Money.png" alt="Save Money" /><h6>Save Money</h6></div>
-    <div class="fe-box"><img src="img/Features/Happy Clients.png" alt="Happy Clients" /><h6>Happy Clients</h6></div>
-    <div class="fe-box"><img src="img/Features/Expert Welding Service.png" alt="Expert Welding Service" /><h6>Expert Welding Service</h6></div>
-    <div class="fe-box"><img src="img/Features/Reliable Support.png" alt="Reliable Support" /><h6>Reliable Support</h6></div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section-p1">
-    <h2>Our Services</h2>
-    <p>We specialize in steel fabrication and welding solutions tailored to your needs.</p>
-    <div class="services-container">
-      <img src="img/Services.png" alt="Steel fabrication & welding services" loading="lazy" />
+    <div class="fe-box">
+      <img src="img/Features/expert-welding-service-300.webp"
+           srcset="img/Features/expert-welding-service-150.webp 150w,
+                   img/Features/expert-welding-service-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="Expert welding service icon"
+           width="180" height="160" loading="lazy" />
+      <h6>Expert Welding Service</h6>
+      <p class="fe-text">Experienced welders for strong joints and neat finishing.</p>
     </div>
-  </section>
 
-  <!-- Product Section -->
-  <section id="product1" class="section-p1">
-    <h2>Trending Products</h2>
-    <p>Most selling items with expert fabrication and welding services at your doorstep</p>
-    <div class="pro-container">
+    <div class="fe-box">
+      <img src="img/Features/free-quote-on-call-300.webp"
+           srcset="img/Features/free-quote-on-call-150.webp 150w,
+                   img/Features/free-quote-on-call-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="Free quote on call icon"
+           width="180" height="160" loading="lazy" />
+      <h6>Free Quote on Call</h6>
+      <p class="fe-text">Share your requirement and get a quick estimate.</p>
+    </div>
+
+    <div class="fe-box">
+      <img src="img/Features/on-site-measurement-300.webp"
+           srcset="img/Features/on-site-measurement-150.webp 150w,
+                   img/Features/on-site-measurement-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="On-site measurement icon"
+           width="180" height="160" loading="lazy" />
+      <h6>On-Site Measurement</h6>
+      <p class="fe-text">We visit your site before fabrication for perfect fitting.</p>
+    </div>
+
+    <div class="fe-box">
+      <img src="img/Features/happy-clients-300.webp"
+           srcset="img/Features/happy-clients-150.webp 150w,
+                   img/Features/happy-clients-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="Happy clients icon"
+           width="180" height="160" loading="lazy" />
+      <h6>Happy Clients</h6>
+      <p class="fe-text">Trusted by homeowners, shops and builders.</p>
+    </div>
+
+    <div class="fe-box">
+      <img src="img/Features/save-money-300.webp"
+           srcset="img/Features/save-money-150.webp 150w,
+                   img/Features/save-money-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="Save money icon"
+           width="180" height="160" loading="lazy" />
+      <h6>Save Money</h6>
+      <p class="fe-text">Designs that balance strength, looks and budget.</p>
+    </div>
+
+    <div class="fe-box">
+      <img src="img/Features/reliable-support-300.webp"
+           srcset="img/Features/reliable-support-150.webp 150w,
+                   img/Features/reliable-support-300.webp 300w"
+           sizes="(max-width: 600px) 45vw, 180px"
+           alt="Reliable support icon"
+           width="180" height="160" loading="lazy" />
+      <h6>Reliable Support</h6>
+      <p class="fe-text">We are available for future changes and additions.</p>
+    </div>
+
+  </div> <!-- ✅ END feature-row -->
+</section>
+
+    <!-- Services Banner -->
+<section id="services" aria-labelledby="services-heading">
+  <h2 id="services-heading">Our Services</h2>
+  <p class="services-sub">
+    We specialize in steel and metal fabrication, welding solutions & aluminium work tailored to your needs.
+  </p>
+
+  <div class="services-container">
+    <img
+      src="img/services-1600.webp"
+      srcset="
+        img/services-800.webp 800w,
+        img/services-1200.webp 1200w,
+        img/services-1600.webp 1600w
+      "
+      sizes="(max-width: 768px) 90vw,
+             (max-width: 1200px) 80vw,
+             1600px"
+      alt="Overview of steel and iron fabrication services"
+      width="1600"
+      height="500"
+      loading="lazy"
+    />
+  </div>
+</section>
+
+    <!-- Products / Designs Section -->
+<section id="product1" class="section-p1" aria-labelledby="product-heading">
+  <h2 id="product-heading">Popular Designs & Fabrication Work</h2>
+  <p>All designs can be customized to your exact size, style and budget.</p>
+
+  <div class="pro-container">
 
     <!-- Steel Gates -->
     <div class="pro">
-        <img src="img/Products/steel-gates.png" alt="Steel gates SS 304 design" loading="lazy" />
-        <div class="des">
-          <h5>Steel Gates (SS 304)</h5>
-          <p>Strong, stylish, and secure gates for homes and businesses.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-steel-gates-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/steel-gates-260-lossless.webp 260w,
+            img/Products/homepage/steel-gates-520-lossless.webp 520w,
+            img/Products/homepage/steel-gates-800-lossless.webp 800w,
+            img/Products/homepage/steel-gates-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/steel-gates-260.jpg"
+          alt="Steel gates SS 304 design"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Steel Gates (SS 304)</h5>
+        <p>Strong, stylish, and secure gates for homes and businesses.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/steel-gates" class="know-more">Know More</a>
       </div>
+    </div>
+
+    <!-- Steel Main Gates (SS 304) -->
+    <div class="pro">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/steel-main-gates-260-lossless.webp 260w,
+            img/Products/homepage/steel-main-gates-520-lossless.webp 520w,
+            img/Products/homepage/steel-main-gates-800-lossless.webp 800w,
+            img/Products/homepage/steel-main-gates-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/steel-main-gates-260.jpg"
+          alt="Steel main gates SS 304 design"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Steel main Gates (SS 304)</h5>
+        <p>Premium SS 304 gates — rust‑resistant and durable for homes and businesses.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <a href="/steel-main-gates" class="know-more">Know More</a>
+      </div>
+    </div>
 
     <!-- Iron Gates -->
     <div class="pro">
-        <img src="img/Products/iron-gates.png" alt="Iron gates fabrication design" loading="lazy" />
-        <div class="des">
-          <h5>Iron Gates</h5>
-          <p>Durable iron gates with classic designs for security and style.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-iron-gates-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/iron-gates-260-lossless.webp 260w,
+            img/Products/homepage/iron-gates-520-lossless.webp 520w,
+            img/Products/homepage/iron-gates-800-lossless.webp 800w,
+            img/Products/homepage/iron-gates-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/iron-gates-260.jpg"
+          alt="Iron gates fabrication design"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>MS Iron Gates</h5>
+        <p>Durable iron gates with classic designs for security and style.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/iron-gates" class="know-more">Know More</a>
       </div>
+    </div>
+
+    <!-- Iron Main Gates -->
+    <div class="pro">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/iron-main-gates-260-lossless.webp 260w,
+            img/Products/homepage/iron-main-gates-520-lossless.webp 520w,
+            img/Products/homepage/iron-main-gates-800-lossless.webp 800w,
+            img/Products/homepage/iron-main-gates-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/iron-main-gates-260.jpg"
+          alt="Iron main gates fabrication design"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>MS Iron Main Gates</h5>
+        <p>Strong, affordable iron gates with classic designs for secure homes and industries.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <a href="/iron-main-gates" class="know-more">Know More</a>
+      </div>
+    </div>
 
     <!-- Iron-Steel Gates -->
     <div class="pro">
-        <img src="img/Products/iron-steel-gates.png" alt="Iron and steel gates fabrication" loading="lazy"/>
-        <div class="des">
-          <h5>Iron-Steel Gates</h5>
-          <p>Combination of iron strength and steel finish for premium gates.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-iron-steel-gates-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/iron-steel-gates-260-lossless.webp 260w,
+            img/Products/homepage/iron-steel-gates-520-lossless.webp 520w,
+            img/Products/homepage/iron-steel-gates-800-lossless.webp 800w,
+            img/Products/homepage/iron-steel-gates-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/iron-steel-gates-260.jpg"
+          alt="Iron and steel gates fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Iron-Steel Gates</h5>
+        <p>Combination of iron strength and steel finish for premium gates.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/iron-steel-gates" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Stairs & Railings -->
     <div class="pro">
-        <img src="img/Products/stairs-railings.png" alt="Custom steel and iron stairs and railings" loading="lazy" />
-        <div class="des">
-          <h5>Stairs and Railings(Iron, Steel)</h5>
-          <p>Modern designs for staircases and railings with durability and style.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-stairs-railings-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/stairs-railings-260-lossless.webp 260w,
+            img/Products/homepage/stairs-railings-520-lossless.webp 520w,
+            img/Products/homepage/stairs-railings-800-lossless.webp 800w,
+            img/Products/homepage/stairs-railings-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/stairs-railings-260.jpg"
+          alt="Custom steel and iron stairs and railings"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Stairs and Railings(Iron, Steel)</h5>
+        <p>Modern designs for staircases and railings with durability and style.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/stairs-railings" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Shed -->
     <div class="pro">
-        <img src="img/Products/Shed.png" alt="Metro & fiber shed fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Metro & Fiber Shed</h5>
-          <p>Durable sheds for homes, shops, and industrial use.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-shed-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/shed-260-lossless.webp 260w,
+            img/Products/homepage/shed-520-lossless.webp 520w,
+            img/Products/homepage/shed-800-lossless.webp 800w,
+            img/Products/homepage/Shed-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/shed-260.jpg"
+          alt="Metro & fiber shed fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Metro & Fiber Shed</h5>
+        <p>Durable sheds for homes, shops, and industrial use.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/shed" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Windows -->
     <div class="pro">
-        <img src="img/Products/windows.png" alt="Custom steel and iron window fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Windows(Iron, Steel)</h5>
-          <p>Custom fabricated steel and iron windows for homes and offices.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-windows-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/windows-260-lossless.webp 260w,
+            img/Products/homepage/windows-520-lossless.webp 520w,
+            img/Products/homepage/windows-800-lossless.webp 800w,
+            img/Products/homepage/windows-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/windows-260.jpg"
+          alt="Custom steel and iron window fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Windows(Iron, Steel)</h5>
+        <p>Custom fabricated steel and iron windows for homes and offices.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/windows" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Gamla Stand -->
     <div class="pro">
-        <img src="img/Products/gamla-stand.png" alt="Steel and iron pot stand fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Gamla Stand</h5>
-          <p>Strong and stylish stands for flower pots and planters.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-gamla-stand-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/gamla-stand-260-lossless.webp 260w,
+            img/Products/homepage/gamla-stand-520-lossless.webp 520w,
+            img/Products/homepage/gamla-stand-800-lossless.webp 800w,
+            img/Products/homepage/gamla-stand-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/gamla-stand-260.jpg"
+          alt="Steel and iron pot stand fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Gamla Stand</h5>
+        <p>Strong and stylish stands for flower pots and planters.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/gamla-stand" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Jaal Covering -->
     <div class="pro">
-        <img src="img/Products/jaal-covering.png" alt="Steel and iron jaal covering fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Jaal Covering</h5>
-          <p>Protective jaal coverings for safety and ventilation.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-jaal-covering-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/jaal-covering-260-lossless.webp 260w,
+            img/Products/homepage/jaal-covering-520-lossless.webp 520w,
+            img/Products/homepage/jaal-covering-800-lossless.webp 800w,
+            img/Products/homepage/jaal-covering-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/jaal-covering-260.jpg"
+          alt="Steel and iron jaal covering fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Jaal Covering</h5>
+        <p>Protective jaal coverings for safety and ventilation.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/jaal-covering" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Cloth Drying Hanger -->
     <div class="pro">
-        <img src="img/Products/cloth-hanger.png" alt="Steel and iron cloth drying hanger fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Cloth Drying Hanger(Iron, Steel)</h5>
-          <p>Durable wall, railing and ceiling-mounted drying solutions.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-cloth-hanger-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/cloth-hanger-260-lossless.webp 260w,
+            img/Products/homepage/cloth-hanger-520-lossless.webp 520w,
+            img/Products/homepage/cloth-hanger-800-lossless.webp 800w,
+            img/Products/homepage/cloth-hanger-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/cloth-hanger-260.jpg"
+          alt="Steel and iron cloth drying hanger fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Cloth Drying Hanger(Iron, Steel)</h5>
+        <p>Durable wall, railing and ceiling-mounted drying solutions.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/cloth-hanger" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Display Stand -->
     <div class="pro">
-        <img src="img/Products/display-stand.png" alt="Iron display stand for posters and banners" loading="lazy" />
-        <div class="des">
-          <h5>Display Stand (Poster, Banner)</h5>
-          <p>Strong iron stands for shops, events, and exhibitions.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-display-stand-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/display-stand-260-lossless.webp 260w,
+            img/Products/homepage/display-stand-520-lossless.webp 520w,
+            img/Products/homepage/display-stand-800-lossless.webp 800w,
+            img/Products/homepage/display-stand-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/display-stand-260.jpg"
+          alt="Iron display stand for posters and banners"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Display Stand (Poster, Banner)</h5>
+        <p>Strong iron stands for shops, events and exhibitions.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/display-stand" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Wall Fence -->
     <div class="pro">
-        <img src="img/Products/wall-fence.png" alt="Steel and iron wall fence fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Wall Fence (Iron, Steel)</h5>
-          <p>Secure fencing solutions for homes, gardens, and boundaries.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-wall-fence-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/wall-fence-260-lossless.webp 260w,
+            img/Products/homepage/wall-fence-520-lossless.webp 520w,
+            img/Products/homepage/wall-fence-800-lossless.webp 800w,
+            img/Products/homepage/wall-fence-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/wall-fence-260.jpg"
+          alt="Steel and iron wall fence fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Wall Fence (Iron, Steel)</h5>
+        <p>Secure fencing solutions for homes, gardens and boundaries.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/wall-fence" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Shop Rolling Shutter -->
     <div class="pro">
-        <img src="img/Products/rolling-shutter.png" alt="Iron shop rolling shutter fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Shop Rolling Shutter (Iron)</h5>
-          <p>Heavy-duty iron rolling shutters for shops and commercial spaces, built for strength and security.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-rolling-shutter-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/rolling-shutter-260-lossless.webp 260w,
+            img/Products/homepage/rolling-shutter-520-lossless.webp 520w,
+            img/Products/homepage/rolling-shutter-800-lossless.webp 800w,
+            img/Products/homepage/rolling-shutter-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/rolling-shutter-260.jpg"
+          alt="Iron shop rolling shutter fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Shop Rolling Shutter</h5>
+        <p>Secure and durable for shops and commercial spaces.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/rolling-shutter" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Jhula -->
     <div class="pro">
-        <img src="img/Products/jhula.png" alt="Custom steel and iron swing Jhula fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Jhula (Iron, Steel)</h5>
-          <p>Beautifully crafted steel and iron swings for temples, homes, and gardens with durable fabrication.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-jhula-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/jhula-260-lossless.webp 260w,
+            img/Products/homepage/jhula-520-lossless.webp 520w,
+            img/Products/homepage/jhula-800-lossless.webp 800w,
+            img/Products/homepage/jhula-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/jhula-260.jpg"
+          alt="Custom steel and iron swing Jhula fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Jhula (Iron, Steel)</h5>
+        <p>Durable swings for temples, homes, and gardens.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/jhula" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Furniture -->
     <div class="pro">
-        <img src="img/Products/furniture.png" alt="Steel furniture fabrication bed, chair, table" loading="lazy" />
-        <div class="des">
-          <h5>Furniture (Steel)</h5>
-          <p>Strong and stylish steel beds, chairs, and tables.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-furniture-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/furniture-260-lossless.webp 260w,
+            img/Products/homepage/furniture-520-lossless.webp 520w,
+            img/Products/homepage/furniture-800-lossless.webp 800w,
+            img/Products/homepage/furniture-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/furniture-260.jpg"
+          alt="Steel furniture fabrication bed, chair, table"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Furniture(Steel)</h5>
+        <p>Strong and stylish steel beds, chairs and tables.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
+        <a href="/furniture" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Hawan Kund -->
     <div class="pro">
-        <img src="img/Products/hawan-kund.png" alt="Iron Hawan Kund fabrication for rituals" loading="lazy" />
-        <div class="des">
-          <h5>Hawan Kund (Iron)</h5>
-          <p>Traditional iron Hawan Kund for rituals and ceremonies, and long-lasting use.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-hawan-kund-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/hawan-kund-260-lossless.webp 260w,
+            img/Products/homepage/hawan-kund-520-lossless.webp 520w,
+            img/Products/homepage/hawan-kund-800-lossless.webp 800w,
+            img/Products/homepage/hawan-kund-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/hawan-kund-260.jpg"
+          alt="Iron Hawan Kund fabrication for rituals"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Hawan Kund (Iron)</h5>
+        <p>Traditional iron Hawan Kund for rituals and ceremonies, and long-lasting use.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
         </div>
+        <a href="/hawan-kund" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Domestic Water Motor Box / Stand -->
     <div class="pro">
-        <img src="img/Products/water-motor-box.png" alt="Steel and iron domestic water motor box stand fabrication" loading="lazy" />
-        <div class="des">
-          <h5>Domestic Water Motor Box / Stand</h5>
-          <p>Secure steel & iron box or stand to protect domestic water motors from theft and damage.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-water-motor-box-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/water-motor-box-260-lossless.webp 260w,
+            img/Products/homepage/water-motor-box-520-lossless.webp 520w,
+            img/Products/homepage/water-motor-box-800-lossless.webp 800w,
+            img/Products/homepage/water-motor-box-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/water-motor-box-260.jpg"
+          alt="Steel and iron domestic water motor box stand fabrication"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Domestic Water Motor Box / Stand</h5>
+        <p>Secure iron box to protect domestic water motors from theft and damage.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
         </div>
+        <a href="/water-motor-box" class="know-more">Know More</a>
       </div>
+    </div>
 
     <!-- Aluminium Work -->
     <div class="pro">
-        <img src="img/Products/aluminium-work.png" alt="Aluminium fabrication work windows doors structures" loading="lazy" />
-        <div class="des">
-          <h5>Aluminium Work</h5>
-          <p>Modern aluminium fabrication for windows, doors, partitions, and structural solutions with a sleek finish.</p>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="all-aluminium-work-design.html" class="know-more">Know More</a>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            img/Products/homepage/aluminium-work-260-lossless.webp 260w,
+            img/Products/homepage/aluminium-work-520-lossless.webp 520w,
+            img/Products/homepage/aluminium-work-800-lossless.webp 800w,
+            img/Products/homepage/aluminium-work-1000-lossless.webp 1000w
+          "
+          sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px"
+        />
+        <img
+          src="img/Products/homepage/aluminium-work-260.jpg"
+          alt="Aluminium fabrication work windows doors structures"
+          width="260"
+          height="245"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <div class="des">
+        <h5>Aluminium Work</h5>
+        <p>Sleek aluminium fabrication for windows, doors, and partitions.</p>
+        <div class="star" aria-label="5 out of 5 star rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
         </div>
+        <a href="/aluminium-work" class="know-more">Know More</a>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+    <!-- Contact / CTA Section -->
+<section id="contact" class="section-p1 section-m1 contact-section">
+  <h2>Ready to discuss your fabrication work?</h2>
+  <p>Call now to share your requirement. We’ll guide you with the best design options and give a clear estimate.</p>
+  
+  <a href="tel:+919810776115" class="call-button">
+    <i class="fa-solid fa-phone"></i> Call Now for Free Quote
+  </a>
+
+  <a href="https://wa.me/919810776115" class="whatsapp-btn" target="_blank">
+    💬 WhatsApp Us
+  </a>
+</section>
+</main>
+
+<!-- Google Map Section -->
+<section id="map" class="map-section">
+  <h2>Find Us on Google Maps</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4121719528644!2d77.3601297752491!3d28.647374883406922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfab0b721fb49%3A0x693245a964a351cd!2sPankaj%20Steel%20Fabrication%20%26%20Welding%20Services!5e0!3m2!1sen!2sin!4v1766121308095!5m2!1sen!2sin"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      aria-label="Google Maps location">
+    </iframe>
+  </div>
+</section>
 
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Pankaj Steel Fabrication & Welding Services</p>
+      <p>Near Modern Academy School(Gate No.2), Shakti Khand I, Indirapuram, Ghaziabad, Uttar Pradesh</p>
+      <p>Also available on Google Maps & Search.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/aluminium-work-260-lossless.webp 260w , img/Products/homepage/aluminium-work-520-lossless.webp 520w , img/Products/homepage/aluminium-work-800-lossless.webp 800w , img/Products/homepage/aluminium-work-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/aluminium-work-260.jpg"
+       alt="Aluminium Work"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/cloth-hanger-260-lossless.webp 260w , img/Products/homepage/cloth-hanger-520-lossless.webp 520w , img/Products/homepage/cloth-hanger-800-lossless.webp 800w , img/Products/homepage/cloth-hanger-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/cloth-hanger-260.jpg"
+       alt="Cloth Hanger"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/display-stand-260-lossless.webp 260w , img/Products/homepage/display-stand-520-lossless.webp 520w , img/Products/homepage/display-stand-800-lossless.webp 800w , img/Products/homepage/display-stand-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/display-stand-260.jpg"
+       alt="Display Stand"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/furniture-260-lossless.webp 260w , img/Products/homepage/furniture-520-lossless.webp 520w , img/Products/homepage/furniture-800-lossless.webp 800w , img/Products/homepage/furniture-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/furniture-260.jpg"
+       alt="Furniture"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/gamla-stand-260-lossless.webp 260w , img/Products/homepage/gamla-stand-520-lossless.webp 520w , img/Products/homepage/gamla-stand-800-lossless.webp 800w , img/Products/homepage/gamla-stand-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/gamla-stand-260.jpg"
+       alt="Gamla Stand"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/hawan-kund-260-lossless.webp 260w , img/Products/homepage/hawan-kund-520-lossless.webp 520w , img/Products/homepage/hawan-kund-800-lossless.webp 800w , img/Products/homepage/hawan-kund-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/hawan-kund-260.jpg"
+       alt="Hawan Kund"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/iron-gates-260-lossless.webp 260w , img/Products/homepage/iron-gates-520-lossless.webp 520w , img/Products/homepage/iron-gates-800-lossless.webp 800w , img/Products/homepage/iron-gates-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/iron-gates-260.jpg"
+       alt="Iron Gates"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/iron-main-gates-260-lossless.webp 260w , img/Products/homepage/iron-main-gates-520-lossless.webp 520w , img/Products/homepage/iron-main-gates-800-lossless.webp 800w , img/Products/homepage/iron-main-gates-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/iron-main-gates-260.jpg"
+       alt="Iron Main Gates"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/iron-steel-gates-260-lossless.webp 260w , img/Products/homepage/iron-steel-gates-520-lossless.webp 520w , img/Products/homepage/iron-steel-gates-800-lossless.webp 800w , img/Products/homepage/iron-steel-gates-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/iron-steel-gates-260.jpg"
+       alt="Iron Steel Gates"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/jaal-covering-260-lossless.webp 260w , img/Products/homepage/jaal-covering-520-lossless.webp 520w , img/Products/homepage/jaal-covering-800-lossless.webp 800w , img/Products/homepage/jaal-covering-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/jaal-covering-260.jpg"
+       alt="Jaal Covering"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/jhula-260-lossless.webp 260w , img/Products/homepage/jhula-520-lossless.webp 520w , img/Products/homepage/jhula-800-lossless.webp 800w , img/Products/homepage/jhula-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/jhula-260.jpg"
+       alt="Jhula"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/rolling-shutter-260-lossless.webp 260w , img/Products/homepage/rolling-shutter-520-lossless.webp 520w , img/Products/homepage/rolling-shutter-800-lossless.webp 800w , img/Products/homepage/rolling-shutter-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/rolling-shutter-260.jpg"
+       alt="Rolling Shutter"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/Shed-260-lossless.webp 260w , img/Products/homepage/Shed-520-lossless.webp 520w , img/Products/homepage/Shed-800-lossless.webp 800w , img/Products/homepage/Shed-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/Shed-260.jpg"
+       alt="Shed"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/stairs-railings-260-lossless.webp 260w , img/Products/homepage/stairs-railings-520-lossless.webp 520w , img/Products/homepage/stairs-railings-800-lossless.webp 800w , img/Products/homepage/stairs-railings-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/stairs-railings-260.jpg"
+       alt="Stairs Railings"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/steel-gates-260-lossless.webp 260w , img/Products/homepage/steel-gates-520-lossless.webp 520w , img/Products/homepage/steel-gates-800-lossless.webp 800w , img/Products/homepage/steel-gates-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/steel-gates-260.jpg"
+       alt="Steel Gates"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/steel-main-gates-260-lossless.webp 260w , img/Products/homepage/steel-main-gates-520-lossless.webp 520w , img/Products/homepage/steel-main-gates-800-lossless.webp 800w , img/Products/homepage/steel-main-gates-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/steel-main-gates-260.jpg"
+       alt="Steel Main Gates"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/wall-fence-260-lossless.webp 260w , img/Products/homepage/wall-fence-520-lossless.webp 520w , img/Products/homepage/wall-fence-800-lossless.webp 800w , img/Products/homepage/wall-fence-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/wall-fence-260.jpg"
+       alt="Wall Fence"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/water-motor-box-260-lossless.webp 260w , img/Products/homepage/water-motor-box-520-lossless.webp 520w , img/Products/homepage/water-motor-box-800-lossless.webp 800w , img/Products/homepage/water-motor-box-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/water-motor-box-260.jpg"
+       alt="Water Motor Box"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
+
+
+<picture>
+  <source type="image/webp"
+    srcset="img/Products/homepage/windows-260-lossless.webp 260w , img/Products/homepage/windows-520-lossless.webp 520w , img/Products/homepage/windows-800-lossless.webp 800w , img/Products/homepage/windows-1000-lossless.webp 1000w"
+    sizes="(max-width: 600px) 260px, (max-width: 1200px) 520px, 800px" />
+  <img src="img/Products/homepage/windows-260.jpg"
+       alt="Windows"
+       width="260" height="245"
+       loading="lazy" decoding="async" />
+</picture>
