@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Website loaded successfully!");
 
   /* --------------------------------
      HERO SLIDER WITH DOTS + AUTO SLIDE
@@ -141,10 +140,14 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          cardObserver.unobserve(entry.target); // unobserve once visible
         }
       });
     },
-    { threshold: 0.2 }
+    {
+      threshold: 0.05,
+      rootMargin: "0px 0px 100px 0px"
+    }
   );
 
   document.querySelectorAll(".img-card").forEach(card => {
@@ -170,12 +173,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.1 }
+    {
+      threshold: 0.05,
+      rootMargin: "0px 0px 100px 0px"
+    }
   );
 
   document.querySelectorAll(".img-card img").forEach(img => {
     imgObserver.observe(img);
   });
 
-});
+  /* --------------------------------
+     MOBILE FALLBACK (force visible if very small screens)
+  ----------------------------------- */
+  if (window.innerWidth < 600) {
+    document.querySelectorAll(".img-card").forEach(card => card.classList.add("visible"));
+    document.querySelectorAll(".img-card img").forEach(img => img.classList.add("loaded"));
+  }
 
+});
