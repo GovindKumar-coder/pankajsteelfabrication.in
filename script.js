@@ -133,20 +133,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* --------------------------------
-     FADE-IN ON SCROLL
+     FADE-IN ON SCROLL (cards)
   ----------------------------------- */
   const cardObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          cardObserver.unobserve(entry.target); // unobserve once visible
+          cardObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.05,
-      rootMargin: "0px 0px 100px 0px"
+      threshold: 0.01,                // trigger as soon as 1% visible
+      rootMargin: "0px 0px 300px 0px" // preload before scrolling into view
     }
   );
 
@@ -155,27 +155,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* --------------------------------
-     FADE-IN WHEN IMAGE LOADS (LAZY LOAD SAFE)
+     FADE-IN WHEN IMAGE LOADS
   ----------------------------------- */
   const imgObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
-
           if (img.complete) {
             img.classList.add("loaded");
           } else {
             img.addEventListener("load", () => img.classList.add("loaded"));
           }
-
           imgObserver.unobserve(img);
         }
       });
     },
     {
-      threshold: 0.05,
-      rootMargin: "0px 0px 100px 0px"
+      threshold: 0.01,
+      rootMargin: "0px 0px 300px 0px"
     }
   );
 
@@ -184,9 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* --------------------------------
-     MOBILE FALLBACK (force visible if very small screens)
+     MOBILE FALLBACK (force visible if small/medium screens)
   ----------------------------------- */
-  if (window.innerWidth < 600) {
+  if (window.innerWidth < 800) {
     document.querySelectorAll(".img-card").forEach(card => card.classList.add("visible"));
     document.querySelectorAll(".img-card img").forEach(img => img.classList.add("loaded"));
   }
