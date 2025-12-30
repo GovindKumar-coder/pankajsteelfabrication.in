@@ -1,12 +1,6 @@
 /* ============================
    FONT IMPORTS
 ============================ */
-@font-face {
-  font-family: 'Spartan';
-  src: url('Spartan.woff2') format('woff2');
-  font-weight: 300 700;
-  font-display: swap;
-}
 
 body {
   font-family: 'Spartan', sans-serif;
