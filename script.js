@@ -22,13 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const dots = dotsContainer.querySelectorAll(".dot");
 
     function showSlide(i) {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle("active", idx === i);
-      });
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === i);
-      });
-    }
+  slides.forEach((slide, idx) => {
+    slide.classList.toggle("active", idx === i);
+  });
+  dots.forEach((dot, idx) => {
+    const isActive = idx === i;
+    dot.classList.toggle("active", isActive);
+    dot.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+}
+
 
     function goToSlide(i) {
       index = i;

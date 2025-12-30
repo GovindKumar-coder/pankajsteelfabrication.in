@@ -495,57 +495,102 @@ footer {
   transform: scale(0.97);
 }
 
-/* Hero Slider Dots */
+/* ============================
+   HERO SLIDER DOTS – ::before version (fixed)
+============================ */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure non-active slides are hidden (if using img.hero-slide) */
+.hero-slide {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.hero-slide.active {
+  display: block;
+}
+
+/* If using <div class="hero-slide"><img ...></div>, use this instead:
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+.hero-slide.active {
+  display: block;
+}
+*/
+
+/* Prevent slide images from intercepting clicks */
+#hero img,
+.hero-slide img {
+  pointer-events: none;
+}
+
+/* Dots container above slides */
 .slider-dots {
   position: absolute;
   bottom: 20px;
-  width: 100%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: 10px;
-  z-index: 5;
+  z-index: 10;              /* above slides */
+  pointer-events: auto;     /* allow clicks */
 }
 
+/* Base dot */
 .slider-dots .dot {
-  width: 12px;
+  position: relative;
+  width: 12px;              /* visible circle */
   height: 12px;
   background: rgba(255,255,255,0.5);
   border-radius: 50%;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: none;
+  padding: 0;               /* keep visual size small */
+  pointer-events: auto;     /* ensure button receives clicks */
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Invisible hit area (does not intercept events) */
+.slider-dots .dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;              /* recommended touch size */
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;     /* important: don't block clicks */
+}
+
+/* Active dot */
 .slider-dots .dot.active {
   background: #ffffff;
   transform: scale(1.2);
 }
 
-/* Feature section */
+/* Focus style for accessibility */
+.slider-dots .dot:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* ============================
+   FEATURE SECTION
+============================ */
 #feature {
-  padding: 20px 10px; /* ✅ reduced side padding so 180px boxes fit */
-}
-
-/* ✅ One line, no scroll */
-.feature-row {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 12px;              /* ✅ reduced gap from 20px → 12px */
-  justify-content: space-between;
-  width: 100%;
-  overflow-x: hidden;     /* ✅ no scroll */
-}
-
-/* ✅ Keep boxes exactly 180px */
-.feature-row .fe-box {
-  flex: 0 0 180px;
-  text-align: center;
-  padding: 18px 12px;
-  box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
-  border: 1px solid #cce7d0;
-  border-radius: 6px;
-  margin: 5px 0;
-  transition: 0.3s ease;
-  background-color: #fff;
+  padding: 20px 10px;
+  margin-top: 25px;
+  position: relative; /* needed for fade edges */
 }
 
 #feature h2,
@@ -554,25 +599,58 @@ footer {
   width: 100%;
 }
 
+/* Default: one line on large screens */
 #feature .section-intro {
   white-space: nowrap;
   overflow: visible;
   text-overflow: unset;
 }
 
-#feature {
-  margin-top: 25px;   /* ✅ adjust this number for more/less space */
+/* On mobile: allow wrapping */
+@media (max-width: 768px) {
+  #feature .section-intro {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
 
-.feature-row .fe-box h6 {
-  margin-bottom: 6px;   /* space below the title */
+/* Feature row */
+.feature-row {
+  display: flex;
+  flex-wrap: nowrap;          /* always one line */
+  gap: 12px;
+  justify-content: space-between;
+  width: 100%;
+  overflow-x: hidden;         /* desktop: no scroll */
+}
+
+.feature-row .fe-box {
+  flex: 0 0 180px;            /* fixed width */
+  text-align: center;
+  padding: 18px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #cce7d0;
+  border-radius: 6px;
+  margin: 5px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.feature-row .fe-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.feature-row .fe-box h3 {
+  margin-bottom: 6px;
   font-size: 15px;
   font-weight: 600;
   color: #1a1a1a;
 }
 
 .feature-row .fe-box .fe-text {
-  margin-top: 4px;      /* optional extra space above text */
+  margin-top: 4px;
   font-size: 13px;
   color: #465b52;
   line-height: 1.4;
@@ -582,28 +660,56 @@ footer {
 .feature-row .fe-box img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* ✅ prevents CLS */
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
-/* Mobile */
+/* Mobile: keep one line, allow scroll */
 @media (max-width: 768px) {
   .feature-row {
-    flex-wrap: wrap;
-    overflow-x: visible;
+    overflow-x: auto;             /* ✅ enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    justify-content: flex-start;  /* align boxes left */
+    scroll-snap-type: x mandatory; /* snap scrolling */
   }
 
   .feature-row .fe-box {
-    flex: 1 1 45%;
-    max-width: 45%;
+    flex: 0 0 180px;              /* keep fixed width */
+    max-width: 180px;
+    scroll-snap-align: start;     /* snap each box */
+  }
+
+  /* Fade edge hint for scroll */
+  #feature::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to left, #fff, transparent);
+    pointer-events: none;
   }
 }
 
 @media (max-width: 480px) {
-  .feature-row .fe-box {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .feature-row {
+    overflow-x: auto;
   }
+
+  .feature-row .fe-box {
+    flex: 0 0 180px;
+    max-width: 180px;
+  }
+}
+
+/* Optional scrollbar styling */
+.feature-row::-webkit-scrollbar {
+  height: 6px;
+}
+.feature-row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 /* ============================
@@ -1120,8 +1226,8 @@ footer {
 
 /* WhatsApp button */
 .whatsapp-btn {
-  background: #25D366; /* WhatsApp green */
-  color: #fff;
+  background: #25D366;
+  color: #000; /* dark text for contrast */
 }
 
 .whatsapp-btn:hover,
