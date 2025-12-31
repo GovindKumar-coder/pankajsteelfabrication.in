@@ -9,12 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
   let slideInterval = null;
 
   if (slides.length && dotsContainer) {
-    slides.forEach((_, i) => {
+    // clear any existing dots
+    dotsContainer.innerHTML = "";
+    dotsContainer.setAttribute("role", "tablist");
+
+    slides.forEach((slide, i) => {
+      // give each slide an id for aria-controls
+      slide.id = "slide-" + (i + 1);
+
       const dot = document.createElement("button");
       dot.classList.add("dot");
       dot.type = "button";
+      dot.setAttribute("role", "tab");
       dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+      dot.setAttribute("aria-controls", slide.id);
+      dot.setAttribute("aria-current", i === 0 ? "true" : "false");
+
       if (i === 0) dot.classList.add("active");
+
       dot.addEventListener("click", () => goToSlide(i));
       dotsContainer.appendChild(dot);
     });
@@ -22,16 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const dots = dotsContainer.querySelectorAll(".dot");
 
     function showSlide(i) {
-  slides.forEach((slide, idx) => {
-    slide.classList.toggle("active", idx === i);
-  });
-  dots.forEach((dot, idx) => {
-    const isActive = idx === i;
-    dot.classList.toggle("active", isActive);
-    dot.setAttribute("aria-current", isActive ? "true" : "false");
-  });
-}
-
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle("active", idx === i);
+      });
+      dots.forEach((dot, idx) => {
+        const isActive = idx === i;
+        dot.classList.toggle("active", isActive);
+        dot.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    }
 
     function goToSlide(i) {
       index = i;
@@ -52,6 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (slideInterval) clearInterval(slideInterval);
       startAutoSlide();
     }
+
+    // pause auto-slide when user interacts
+    dots.forEach(dot => {
+      dot.addEventListener("mouseenter", () => clearInterval(slideInterval));
+      dot.addEventListener("mouseleave", startAutoSlide);
+      dot.addEventListener("focus", () => clearInterval(slideInterval));
+      dot.addEventListener("blur", startAutoSlide);
+    });
 
     showSlide(index);
     startAutoSlide();
@@ -148,8 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.01,                // trigger as soon as 1% visible
-      rootMargin: "0px 0px 300px 0px" // preload before scrolling into view
+      threshold: 0.01,
+      rootMargin: "0px 0px 300px 0px"
     }
   );
 
@@ -185,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* --------------------------------
-     MOBILE FALLBACK (force visible if small/medium screens)
+     MOBILE FALLBACK
   ----------------------------------- */
   if (window.innerWidth < 800) {
     document.querySelectorAll(".img-card").forEach(card => card.classList.add("visible"));
