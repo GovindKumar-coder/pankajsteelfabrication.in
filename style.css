@@ -482,7 +482,7 @@ footer {
 }
 
 /* ============================
-   SLIDER DOTS
+   SLIDER DOTS (desktop)
 ============================ */
 .slider-dots {
   position: absolute;
@@ -495,34 +495,37 @@ footer {
   z-index: 10;
   pointer-events: auto;
 }
+
 .slider-dots .dot {
-  position: relative;
-  width: 12px;
-  height: 12px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  width: 48px;               /* actual clickable area */
+  height: 48px;
+  background: transparent;   /* invisible button background */
   border: none;
+  cursor: pointer;
+  position: relative;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
 }
-.slider-dots .dot::before {
+
+/* small visible circle centered inside */
+.slider-dots .dot::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 48px;               /* touch-friendly area */
-  height: 48px;
+  width: 12px;
+  height: 12px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: transparent;
-  pointer-events: none;
+  background: rgba(255,255,255,0.6);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-.slider-dots .dot.active {
+
+.slider-dots .dot.active::after {
   background: #ffffff;
-  transform: scale(1.2);
+  transform: translate(-50%, -50%) scale(1.2);
 }
+
 .slider-dots .dot:focus {
   outline: 2px solid #333;
   outline-offset: 2px;
@@ -560,6 +563,7 @@ footer {
     display: none !important;
   }
 }
+
 
 /* ============================
    FEATURE SECTION
