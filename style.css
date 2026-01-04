@@ -530,7 +530,7 @@ footer {
     opacity: 1;
   }
 
-  /* 🚫 Hide dots completely on phones */
+  /* Hide dots completely on phones */
   .slider-dots {
     display: none !important;
   }
@@ -1311,6 +1311,11 @@ footer a:hover {
     line-height: 1.4;
   }
 }
+
+/* ============================
+   Utility classes
+============================ */
+.hidden { display: none; }
 
 
 

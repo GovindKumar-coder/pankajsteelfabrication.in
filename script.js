@@ -9,14 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let slideInterval = null;
 
   if (slides.length && dotsContainer) {
-    // clear any existing dots
     dotsContainer.innerHTML = "";
     dotsContainer.setAttribute("role", "tablist");
 
     slides.forEach((slide, i) => {
-      // give each slide an id for aria-controls
       slide.id = "slide-" + (i + 1);
-
       const dot = document.createElement("button");
       dot.classList.add("dot");
       dot.type = "button";
@@ -24,9 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dot.setAttribute("aria-label", "Go to slide " + (i + 1));
       dot.setAttribute("aria-controls", slide.id);
       dot.setAttribute("aria-current", i === 0 ? "true" : "false");
-
       if (i === 0) dot.classList.add("active");
-
       dot.addEventListener("click", () => goToSlide(i));
       dotsContainer.appendChild(dot);
     });
@@ -64,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
       startAutoSlide();
     }
 
-    // pause auto-slide when user interacts
     dots.forEach(dot => {
       dot.addEventListener("mouseenter", () => clearInterval(slideInterval));
       dot.addEventListener("mouseleave", startAutoSlide);
@@ -88,12 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
      IMAGE ZOOM
   ----------------------------------- */
   const zoomableImages = document.querySelectorAll(".product-gallery img, .full-gallery img");
-
   zoomableImages.forEach(img => {
     img.addEventListener("click", () => {
       const overlay = document.createElement("div");
       overlay.className = "zoom-overlay";
-
       const zoomImg = document.createElement("img");
       zoomImg.className = "zoomed-image";
 
@@ -114,16 +106,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       zoomImg.src = src;
       zoomImg.alt = img.alt || "";
-
       overlay.appendChild(zoomImg);
       document.body.appendChild(overlay);
-
       overlay.addEventListener("click", () => overlay.remove());
     });
   });
 
   /* --------------------------------
-     LOAD MORE BUTTON
+     LOAD MORE BUTTON (optimized)
   ----------------------------------- */
   const items = document.querySelectorAll(".product-gallery .img-card");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
@@ -131,26 +121,31 @@ document.addEventListener("DOMContentLoaded", function () {
   if (items.length && loadMoreBtn) {
     let itemsToShow = 20;
 
+    // hide items initially using a class
     items.forEach((item, index) => {
       if (index >= itemsToShow) {
-        item.style.display = "none";
+        item.classList.add("hidden");
       }
     });
 
     loadMoreBtn.addEventListener("click", function () {
       let revealed = 0;
+      const toReveal = [];
 
-      items.forEach((item, index) => {
-        if (item.style.display === "none" && revealed < 20) {
-          item.style.display = "flex";
+      items.forEach(item => {
+        if (item.classList.contains("hidden") && revealed < 20) {
+          toReveal.push(item);
           revealed++;
         }
       });
 
-      const stillHidden = [...items].filter(i => i.style.display === "none");
-      if (stillHidden.length === 0) {
-        loadMoreBtn.style.display = "none";
-      }
+      requestAnimationFrame(() => {
+        toReveal.forEach(item => item.classList.remove("hidden"));
+        const stillHidden = [...items].some(i => i.classList.contains("hidden"));
+        if (!stillHidden) {
+          loadMoreBtn.style.display = "none";
+        }
+      });
     });
   }
 
@@ -166,15 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    {
-      threshold: 0.01,
-      rootMargin: "0px 0px 300px 0px"
-    }
+    { threshold: 0.01, rootMargin: "0px 0px 300px 0px" }
   );
-
-  document.querySelectorAll(".img-card").forEach(card => {
-    cardObserver.observe(card);
-  });
+  document.querySelectorAll(".img-card").forEach(card => cardObserver.observe(card));
 
   /* --------------------------------
      FADE-IN WHEN IMAGE LOADS
@@ -193,15 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    {
-      threshold: 0.01,
-      rootMargin: "0px 0px 300px 0px"
-    }
+    { threshold: 0.01, rootMargin: "0px 0px 300px 0px" }
   );
-
-  document.querySelectorAll(".img-card img").forEach(img => {
-    imgObserver.observe(img);
-  });
+  document.querySelectorAll(".img-card img").forEach(img => imgObserver.observe(img));
 
   /* --------------------------------
      MOBILE FALLBACK
