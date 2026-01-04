@@ -512,8 +512,8 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 36px;               /* touch-friendly area */
-  height: 36px;
+  width: 48px;               /* touch-friendly area */
+  height: 48px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: transparent;
@@ -529,21 +529,17 @@ footer {
 }
 
 /* ============================
-   MOBILE OVERRIDES (fix stacking & stretch)
+   MOBILE OVERRIDES
 ============================ */
 @media (max-width: 768px) {
-  /* Let the hero height be driven by width using aspect-ratio.
-     Your images are ~1600x500 => 1600/500 = 3.2 (wide banner).
-     This prevents tall empty background while keeping contain. */
   #hero {
     height: auto;
     min-height: unset;
     max-height: unset;
-    aspect-ratio: 1600 / 500;   /* controls container height by width */
+    aspect-ratio: 1600 / 500;   /* keeps banner proportion */
     background-color: #E3E6F3;
   }
 
-  /* Keep slides absolutely stacked—only active is visible */
   .hero-slide {
     position: absolute;
     inset: 0;
@@ -559,13 +555,9 @@ footer {
     opacity: 1;
   }
 
-  /* Place dots just above the bottom edge of the image area */
+  /* 🚫 Hide dots completely on phones */
   .slider-dots {
-    position: absolute;
-    bottom: 6%;                /* closer to image, not far down */
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
+    display: none !important;
   }
 }
 
