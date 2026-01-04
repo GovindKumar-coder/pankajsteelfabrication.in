@@ -1,33 +1,23 @@
 /* ============================
-   FONT IMPORTS
+   FONT IMPORTS & BASE
 ============================ */
 body {
   font-family: 'Spartan', sans-serif;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Spartan', sans-serif;
 }
-
-/* Base */
 html, body {
   width: 100%;
   overflow-x: hidden;
   background-color: #ffffff;
   color: #222;
 }
-
-body {
-  line-height: 1.5;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
+body { line-height: 1.5; padding-top: 85px; }
+img { max-width: 100%; display: block; }
 
 /* Skip link */
 .skip-link {
@@ -48,30 +38,18 @@ h3 { font-size: 1.05rem; color: #222; }
 h4 { font-size: 20px; color: #222; }
 h6 { font-weight: 700; font-size: 12px; }
 p  { font-size: 16px; color: #465b52; }
-
 .section-p1 { padding: 40px 80px; }
 .section-m1 { margin: 40px 0; }
 .section-intro { margin: 10px 0 20px; }
-
-/* Layout */
-.section-p1,
-.section-m1 {
+.section-p1, .section-m1 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Logo */
-.logo-wrapper {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.logo {
-  width: 160px;   /* smaller default */
-  height: auto;
-  z-index: 1000;
-}
+.logo-wrapper { position: absolute; top: 10px; left: 10px; }
+.logo { width: 160px; height: auto; z-index: 1000; }
 @media (max-width: 600px) {
   .logo { width: 120px; height: auto; }
 }
@@ -89,9 +67,8 @@ p  { font-size: 16px; color: #465b52; }
   z-index: 9999;
   box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 }
-body { padding-top: 85px; }
 
-/* Navbar on the right */
+/* Navbar */
 #navbar {
   display: flex;
   align-items: center;
@@ -118,25 +95,22 @@ body { padding-top: 85px; }
   background: #088178;
   border-radius: 6px;
 }
-#navbar li a.active { color: #088178; }
+#navbar li a.active {
+  color: #fff;                /* accessible contrast */
+  background-color: #088178;  /* teal background */
+  border-radius: 6px;
+  font-weight: 700;
+}
 #navbar li a.active::after,
 #navbar li a:hover::after,
 #navbar li a:focus::after {
-  content: "";
-  width: 40%;
-  height: 2px;
-  background: #088178;
-  position: absolute;
-  bottom: -2px;
-  left: 10px;
+  content: none;              /* remove underline bar */
 }
 
 html { scroll-behavior: smooth; }
 
-/* Hide checkbox */
+/* Mobile menu toggle */
 #menu-toggle { display: none; }
-
-/* Hamburger icon */
 .menu-icon {
   display: none;
   font-size: 22px;
@@ -158,9 +132,7 @@ html { scroll-behavior: smooth; }
     border-radius: 6px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
-  #menu-toggle:checked ~ #navbar {
-    display: flex;
-  }
+  #menu-toggle:checked ~ #navbar { display: flex; }
 }
 
 /* Call button */
@@ -168,7 +140,7 @@ html { scroll-behavior: smooth; }
   background-color: #088178;
   color: #fff !important;
   border-radius: 999px;
-  padding: 6px 12px !important; /* slimmer */
+  padding: 6px 12px !important;
   font-size: 13px !important;
   box-shadow: 0 3px 8px rgba(8,129,120,0.25);
   transition: background 0.3s ease, transform 0.3s ease;
