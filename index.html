@@ -10,20 +10,19 @@
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <!-- Fonts preload -->
+    <!-- Fonts (preload for performance, replaces @import) -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap">
   </noscript>
 
-  <!-- Font Awesome non-blocking -->
+  <!-- Icons (Font Awesome) – load non-blocking -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
 
-  <!-- Main stylesheet preload -->
-  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css"></noscript> 
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -31,21 +30,27 @@
 
   <!-- Header / Navigation -->
   <header id="header">
-    <a href="/" class="logo-wrapper" aria-label="Pankaj Electricals and Steel Fabrication Home">
-      <video class="logo" autoplay loop muted playsinline width="200" height="120">
-        <source src="img/logo.mp4" type="video/mp4">
-      </video>
-    </a>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-    <ul id="navbar">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="#product1">Products</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="tel:+919810776115" class="call-link"><i class="fa-solid fa-phone"></i> Call for Free Quote</a></li>
-    </ul>
-  </header>
+  <a href="/" class="logo-wrapper" aria-label="Pankaj Electricals and Steel Fabrication Home">
+    <video class="logo" autoplay loop muted playsinline width="200" height="120">
+      <source src="img/logo.mp4" type="video/mp4">
+    </video>
+  </a>
+
+  <!-- Mobile menu toggle -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fa-solid fa-bars"></i>
+  </label>
+
+  <!-- Navbar -->
+  <ul id="navbar">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="#product1">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="tel:+919810776115" class="call-link"><i class="fa-solid fa-phone"></i> Call for Free Quote</a></li>
+  </ul>
+</header>
 
   <!-- Call strip -->
   <div class="call-strip" aria-label="Quick call for quote">
@@ -56,7 +61,7 @@
   </div>
 
   <main id="main-content">
-    <!-- Hero Section -->
+    <!-- Hero Section with Slider -->
 <section id="hero" aria-labelledby="hero-heading">
   <!-- Hero images – WebP + srcset for each slide -->
   <img
