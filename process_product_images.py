@@ -1,32 +1,46 @@
-from PIL import Image
 import os
+from PIL import Image
 
-# Input image path
-input_path = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\My new Website\img\owner-photo.jpg"
+# Paths
+source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-gates\source"
+build_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-gates\build"
 
-# Output folder (same as input folder)
-output_folder = os.path.dirname(input_path)
+# Target max dimensions (aspect ratio preserved)
+variants = {
+    "display": (900, 1200),
+    "thumbs": (260, 350),
+    "zoom-desktop": (1200, 1600),
+    "zoom-tablet": (1024, 1365),
+    "zoom-mobile": (900, 1200),
+    "webp-original": None
+}
 
-# Sizes you want to generate (widths in px)
-sizes = [600, 900, 1200, 1600, 1920]
+# Create subfolders if not exist
+for v in variants.keys():
+    os.makedirs(os.path.join(build_folder, v), exist_ok=True)
 
-# Open original image
-img = Image.open(input_path)
+print("Script started...")
 
-# Loop through sizes and save lossless WebP versions
-for width in sizes:
-    # Calculate proportional height based on original aspect ratio
-    aspect_ratio = img.height / img.width
-    height = int(width * aspect_ratio)
+# Process images
+for idx, filename in enumerate(sorted(os.listdir(source_folder)), start=1):
+    if filename.lower().endswith((".jpg", ".jpeg", ".png")):
+        file_path = os.path.join(source_folder, filename)
+        img = Image.open(file_path).convert("RGB")
 
-    # Resize with high-quality filter
-    resized = img.resize((width, height), Image.LANCZOS)
+        new_base = f"steel-gates-{idx:03d}.webp"
+        orig_w, orig_h = img.size
 
-    # Build output filename
-    base_name = os.path.splitext(os.path.basename(input_path))[0]
-    output_path = os.path.join(output_folder, f"{base_name}-{width}.webp")
+        for variant, max_size in variants.items():
+            new_path = os.path.join(build_folder, variant, new_base)
 
-    # Save as lossless WebP
-    resized.save(output_path, format="WEBP", lossless=True)
+            if max_size:
+                max_w, max_h = max_size
+                img_copy = img.copy()
+                img_copy.thumbnail((max_w, max_h), Image.Resampling.LANCZOS)
+                img_copy.save(new_path, "webp", lossless=True)
+            else:
+                img.save(new_path, "webp", lossless=True)
 
-    print(f"Saved: {output_path} ({width}x{height})")
+        print(f"Processed: {filename} → {new_base} ({orig_w}x{orig_h})")
+
+print("✅ All images converted and saved into build folders.")
