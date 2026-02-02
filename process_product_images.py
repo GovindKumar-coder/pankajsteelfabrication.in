@@ -2,8 +2,8 @@ import os
 from PIL import Image
 
 # Paths
-source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-gates\source"
-build_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-gates\build"
+source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-main-gates\source"
+build_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\pankajsteelfabrication.in\img\Products\steel-main-gates\build"
 
 # Target max dimensions (aspect ratio preserved)
 variants = {
@@ -22,12 +22,12 @@ for v in variants.keys():
 print("Script started...")
 
 # Process images
-for idx, filename in enumerate(sorted(os.listdir(source_folder)), start=1):
+for idx, filename in enumerate(sorted(os.listdir(source_folder)), start=1): 
     if filename.lower().endswith((".jpg", ".jpeg", ".png")):
         file_path = os.path.join(source_folder, filename)
         img = Image.open(file_path).convert("RGB")
 
-        new_base = f"steel-gates-{idx:03d}.webp"
+        new_base = f"steel-main-gates-{idx:03d}.webp"
         orig_w, orig_h = img.size
 
         for variant, max_size in variants.items():
