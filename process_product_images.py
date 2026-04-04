@@ -2,8 +2,8 @@ import os
 from PIL import Image
 
 # Paths
-source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\Other\Aluminium\source"
-build_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\Other\Aluminium\build"
+source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\Other\Railing\source"
+build_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\Other\Railing\build"
 
 # Target max dimensions (aspect ratio preserved)
 variants = {
