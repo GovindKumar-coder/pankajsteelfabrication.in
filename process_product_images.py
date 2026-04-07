@@ -1,5 +1,5 @@
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 
 # Paths
 source_folder = r"C:\Users\Pankaj Kumar\OneDrive\Desktop\Other\Aluminium\source"
@@ -26,6 +26,9 @@ for idx, filename in enumerate(sorted(os.listdir(source_folder)), start=1):
     if filename.lower().endswith((".jpg", ".jpeg", ".png")):
         file_path = os.path.join(source_folder, filename)
         img = Image.open(file_path).convert("RGB")
+
+        # ✅ Correct orientation based on EXIF
+        img = ImageOps.exif_transpose(img)
 
         new_base = f"steel-main-gates-{idx:03d}.webp"
         orig_w, orig_h = img.size
