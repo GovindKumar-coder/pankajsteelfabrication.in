@@ -849,12 +849,11 @@ footer {
   }
 }
 
-
 /* ============================
    PRODUCT PAGE WRAPPER
 ============================ */
 .product-page {
-  padding-top: 20px; /* removed !important for cleaner overrides */
+  padding-top: 20px;
 }
 
 /* ============================
@@ -877,7 +876,7 @@ footer {
 }
 
 /* ============================
-   CATEGORY HEADER (Premium)
+   CATEGORY HEADER
 ============================ */
 .category-header {
   text-align: center;
@@ -902,7 +901,7 @@ footer {
 ============================ */
 .product-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* smaller min width for phones */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 22px;
   max-width: 1100px;
   margin: 0 auto;
@@ -911,13 +910,13 @@ footer {
 
 @media (max-width: 600px) {
   .product-gallery {
-    grid-template-columns: 1fr; /* single column on small screens */
+    grid-template-columns: 1fr;
     max-width: 100%;
   }
 }
 
 /* ============================
-   IMAGE CARD (Equal Height)
+   IMAGE CARD
 ============================ */
 .img-card {
   width: 100%;
@@ -945,7 +944,7 @@ footer {
   object-fit: contain;
   display: block;
   transition: transform 0.3s ease, opacity 0.6s ease;
-  opacity: 0; /* lazy load fade */
+  opacity: 0;
 }
 
 .img-card img.loaded {
@@ -961,34 +960,11 @@ footer {
   transform: scale(1.04);
 }
 
-/* Mobile tweak: flexible height */
 @media (max-width: 600px) {
   .img-card {
     height: auto;
     min-height: 280px;
   }
-}
-
-/* ============================
-   LOAD MORE BUTTON
-============================ */
-#loadMoreBtn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 12px 28px;
-  background: #088178;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-#loadMoreBtn:hover {
-  background: #06655e;
-  transform: translateY(-3px);
 }
 
 /* ============================
@@ -1072,17 +1048,16 @@ footer {
 }
 
 /* ============================
-   ZOOM OVERLAY
+   GALLERY LIGHTBOX OVERLAY
 ============================ */
 .zoom-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.85);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  cursor: zoom-out;
 }
 
 .zoomed-image {

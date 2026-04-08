@@ -9,12 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let slideInterval = null;
 
   if (slides.length && dotsContainer) {
-    // clear any existing dots
     dotsContainer.innerHTML = "";
     dotsContainer.setAttribute("role", "tablist");
 
     slides.forEach((slide, i) => {
-      // give each slide an id for aria-controls
       slide.id = "slide-" + (i + 1);
 
       const dot = document.createElement("button");
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
       startAutoSlide();
     }
 
-    // pause auto-slide when user interacts
     dots.forEach(dot => {
       dot.addEventListener("mouseenter", () => clearInterval(slideInterval));
       dot.addEventListener("mouseleave", startAutoSlide);
@@ -85,74 +82,148 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* --------------------------------
-     IMAGE ZOOM
-  ----------------------------------- */
-  const zoomableImages = document.querySelectorAll(".product-gallery img, .full-gallery img");
+   IMAGE GALLERY LIGHTBOX
+----------------------------------- */
+const galleryImages = document.querySelectorAll(".product-gallery img, .full-gallery img");
+let currentIndex = -1;
+let overlay, zoomImg;
 
-  zoomableImages.forEach(img => {
-    img.addEventListener("click", () => {
-      const overlay = document.createElement("div");
-      overlay.className = "zoom-overlay";
+function openGallery(index) {
+  currentIndex = index;
 
-      const zoomImg = document.createElement("img");
-      zoomImg.className = "zoomed-image";
+  // Create overlay if not exists
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "zoom-overlay";
 
-      let src;
-      if (img.dataset.zoomDesktop || img.dataset.zoomTablet || img.dataset.zoomMobile) {
-        if (window.innerWidth >= 1024 && img.dataset.zoomDesktop) {
-          src = img.dataset.zoomDesktop;
-        } else if (window.innerWidth >= 600 && img.dataset.zoomTablet) {
-          src = img.dataset.zoomTablet;
-        } else if (img.dataset.zoomMobile) {
-          src = img.dataset.zoomMobile;
-        } else {
-          src = img.src;
-        }
-      } else {
-        src = img.src;
-      }
+    zoomImg = document.createElement("img");
+    zoomImg.className = "zoomed-image";
+    overlay.appendChild(zoomImg);
 
-      zoomImg.src = src;
-      zoomImg.alt = img.alt || "";
+    document.body.appendChild(overlay);
 
-      overlay.appendChild(zoomImg);
-      document.body.appendChild(overlay);
-
-      overlay.addEventListener("click", () => overlay.remove());
+    // Close on click background
+    overlay.addEventListener("click", e => {
+      if (e.target === overlay) closeGallery();
     });
-  });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeGallery();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    });
+
+    // Touch swipe navigation
+    let startX = 0;
+    overlay.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+    overlay.addEventListener("touchend", e => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) showNext();   // swipe left
+      if (endX - startX > 50) showPrev();   // swipe right
+    });
+  }
+
+  updateImage();
+  overlay.style.display = "flex";
+}
+
+function updateImage() {
+  const img = galleryImages[currentIndex];
+  let src;
+  if (img.dataset.zoomDesktop || img.dataset.zoomTablet || img.dataset.zoomMobile) {
+    if (window.innerWidth >= 1024 && img.dataset.zoomDesktop) {
+      src = img.dataset.zoomDesktop;
+    } else if (window.innerWidth >= 600 && img.dataset.zoomTablet) {
+      src = img.dataset.zoomTablet;
+    } else if (img.dataset.zoomMobile) {
+      src = img.dataset.zoomMobile;
+    } else {
+      src = img.src;
+    }
+  } else {
+    src = img.src;
+  }
+  zoomImg.src = src;
+  zoomImg.alt = img.alt || "";
+}
+
+function closeGallery() {
+  overlay.style.display = "none";
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  updateImage();
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateImage();
+}
+
+// Attach click events
+galleryImages.forEach((img, i) => {
+  img.addEventListener("click", () => openGallery(i));
+});
+
 
   /* --------------------------------
-     LOAD MORE BUTTON
-  ----------------------------------- */
-  const items = document.querySelectorAll(".product-gallery .img-card");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
+   INFINITE SCROLL (Batch Reveal with IntersectionObserver)
+----------------------------------- */
+const items = document.querySelectorAll(".product-gallery .img-card");
+const totalItems = items.length;
+let itemsToShow = 20;   // show first 20
+const batchSize = 20;   // reveal 20 more each time
 
-  if (items.length && loadMoreBtn) {
-    let itemsToShow = 20;
-
+if (totalItems) {
+  if (totalItems <= itemsToShow) {
+    // If fewer than or equal to 20, show all immediately
+    items.forEach(item => {
+      item.style.display = "flex";
+    });
+  } else {
+    // Hide all beyond first 20
     items.forEach((item, index) => {
       if (index >= itemsToShow) {
         item.style.display = "none";
       }
     });
 
-    loadMoreBtn.addEventListener("click", function () {
+    const revealBatch = () => {
       let revealed = 0;
-
       items.forEach((item, index) => {
-        if (item.style.display === "none" && revealed < 20) {
+        if (item.style.display === "none" && revealed < batchSize) {
           item.style.display = "flex";
           revealed++;
         }
       });
 
-      const stillHidden = [...items].filter(i => i.style.display === "none");
-      if (stillHidden.length === 0) {
-        loadMoreBtn.style.display = "none";
+      // Update observer to watch the new last visible item
+      const visibleItems = [...items].filter(i => i.style.display !== "none");
+      const lastVisible = visibleItems[visibleItems.length - 1];
+      if (lastVisible) {
+        observer.observe(lastVisible);
       }
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target); // stop watching old last item
+          revealBatch();
+        }
+      });
+    }, {
+      rootMargin: "200px"
     });
+
+    // Start observing the last of the initial batch
+    observer.observe(items[itemsToShow - 1]);
   }
+}
 
   /* --------------------------------
      FADE-IN ON SCROLL (cards)
