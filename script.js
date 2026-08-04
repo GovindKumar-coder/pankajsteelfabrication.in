@@ -283,3 +283,76 @@ if (totalItems) {
   }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const videoFacade = document.querySelector(".youtube-facade");
+
+    if (!videoFacade) return;
+
+    function loadYouTubeVideo() {
+
+        // Don't load the video twice
+        if (videoFacade.dataset.loaded === "true") {
+            return;
+        }
+
+        const videoId = videoFacade.dataset.videoId;
+
+        const iframe = document.createElement("iframe");
+
+        iframe.src =
+            "https://www.youtube-nocookie.com/embed/" +
+            videoId +
+            "?autoplay=1&rel=0";
+
+        iframe.title =
+            "Stylish Space-Saving Stairs | Modern Smart Design";
+
+        iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+        iframe.allowFullscreen = true;
+
+        // Remove thumbnail and play button
+        videoFacade.innerHTML = "";
+
+        // Insert YouTube iframe
+        videoFacade.appendChild(iframe);
+
+        // Mark as loaded
+        videoFacade.dataset.loaded = "true";
+
+        // Remove accessibility attributes
+        videoFacade.removeAttribute("role");
+        videoFacade.removeAttribute("tabindex");
+    }
+
+
+    // Load video when clicked
+    videoFacade.addEventListener(
+        "click",
+        loadYouTubeVideo
+    );
+
+
+    // Allow keyboard users to play video
+    videoFacade.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                loadYouTubeVideo();
+
+            }
+
+        }
+    );
+
+});
